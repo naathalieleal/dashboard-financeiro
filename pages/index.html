@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!-- Linguagem padrão da página -->
+<html lang="pt-br">
+
+<!-- Informações sobre a página (não aparece visualmente)-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página no navegador -->
+    <title>COINK - Dashboard</title> 
+
+    <!-- Importação do Tailwind CSS no projeto -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Importação arquivo CSS do projeto (estilos) -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<!-- Conteúdo visível da página -->
+<body>
+
+    <!-- HEADER (cabeçalho da página) -->
+    <header class="header">
+        <div class="header-inner">
+
+            <!-- Logo -->             
+            <span class="logo">C🪙INK</span> <!-- <span> não quebra a linha quando a tela é redimensionada -->
+
+            <!-- Título da página -->
+            <h2 class="header-title">Dashboard</h2>
+
+            <!-- Ações do usuário -->
+            <div class="header-actions"> <!-- Agrupa todos os elementos do lado direito -->
+                <button class="btn-notif" title="Notificações">🔔</button> <!-- <button> cria um botão clicável, e título "Notificações" aparece ao passar o cursor sobre ele -->
+                <div class="avatar">N</div> <!-- Cria um avatar com a inicial do nome do usuário -->
+                <span class="user-name">Nathalie</span> <!-- Exibe o nome do usuário, e desapaece em telas pequenas, como mobile -->
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTEÚDO DA PÁGINA DASHBOARD DESCRITIVA -->
+    <main class="main-content"> <!-- <main> indica o conteúdo principal da página. Só pode existir um por página -->
+
+        <!-- FILTROS DO MÊS -->
+        <section class="filters-card"> <!-- <section> agrupa conteúdos relacionados -->
+
+            <!-- Ano e Meses -->
+            <div class="months-row"> <!-- <div> agrupa os botões de ano e meses. Estilizado no CSS -->
+
+                <button class="btn-year">
+                    2026
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg> 
+                    <!-- <svg> Scalable Vector Graphics (Gráfico Vetorial Escalável). É uma forma de desenhar imagens usando código.
+                        w-3: largura e h-3: altura
+                        fill: preenchimento. none: só contorno
+                        viewBox: área do desenho (24x24)
+                        stroke: cor da borda (currentColor: herda a cor do texto)
+                        <path>: define o formato do desenho. d: comandos para desenhar a forma/caminho da seta (M: move, l: linha, z: fecha o caminho). Width: espessura da linha
+                        -->
+                </button>
+
+                <!-- Botões dos meses -->
+                <button class="btn-month">Jan</button>
+                <button class="btn-month">Fev</button>
+                <button class="btn-month">Mar</button>
+                <button class="btn-month">Abr</button>
+                <button class="btn-month">Mai</button>
+                <button class="btn-month active">Jun</button> <!-- Botão ativo -->
+                <button class="btn-month">Jul</button>
+                <button class="btn-month">Ago</button>
+                <button class="btn-month">Set</button>
+                <button class="btn-month">Out</button>
+                <button class="btn-month">Nov</button>
+                <button class="btn-month">Dez</button>
+
+            </div>
+
+            <!-- Botões de ação -->
+            <div class="actions-row">
+                <button class="btn-view active">Dashboard</button> <!-- Botão ativo -->
+                <button class="btn-view inactive">Gráfico</button> <!-- Botão inativo -->
+                <button class="btn-add">+ Cadastrar despesas</button>
+            </div>
+
+        </section>
+
+        <!-- CARDS DE RESUMO FINANCEIRO -->
+        <section class="cards-grid">
+
+            <!-- Saldo disponível -->
+            <div class="summary-card card-saldo"> 
+                <span class="card-icon">💰</span>
+                <p class="card-label">Saldo disponível</p>
+                <h3 class="card-value">R$ 1.500</h3>
+            </div>
+
+            <!-- Renda do mês -->
+            <div class="summary-card card-renda">
+                <span class="card-icon">📈</span>
+                <p class="card-label">Renda do mês</p>
+                <h3 class="card-value">R$ 4.500</h3>
+            </div>
+
+            <!-- Despesas do mês -->
+            <div class="summary-card card-despesas">
+                <span class="card-icon">📉</span>
+                <p class="card-label">Despesas do mês</p>
+                <h3 class="card-value">R$ 3.000</h3>
+            </div>
+
+            <!-- Total poupado -->
+            <div class="summary-card card-poupado">
+                <span class="card-icon">🏦</span>
+                <p class="card-label">Total poupado</p>
+                <h3 class="card-value">R$ 1.500</h3>
+            </div>
+
+        </section>
+
+        <!-- TABELAS DE GASTOS -->
+        <section class="tables-grid">
+
+            <!-- Despesas Débito -->
+            <div class="table-card">
+
+                <div class="table-header">
+                    <h3 class="table-title">Despesas Débito</h3>
+                    <div class="table-meta">
+                        <p class="table-total-label">Total</p>
+                        <p class="table-total-value total-debit">R$ 1.270,80</p>
+                        <p class="table-hint">↓ Role para visualizar mais</p>
+                    </div>
+                </div>
+                
+                <!-- A classe table-scroll envolve a tabela para permitir rolagem horizontal em telas menores, garantindo que o conteúdo seja acessível sem quebrar o layout. -->
+                <div class="table-scroll">
+                    <table class="expense-table">
+                        <thead>
+                            <tr>
+                                <th>Descrição</th>
+                                <th>Categoria</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mercado</td>
+                                <td><span class="category-tag category-alimentacao">Alimentação</span></td>
+                                <td>R$ 352,90</td>
+                            </tr>            
+                            <tr>
+                                <td>Farmácia</td>
+                                <td><span class="category-tag category-saude">Saúde</span></td>
+                                <td>R$ 86,40</td>
+                            </tr>
+                            <tr>
+                                <td>Posto de Combustível</td>
+                                <td><span class="category-tag category-transporte">Transporte</span></td>
+                                <td>R$ 180,00</td>
+                            </tr>
+                            <tr>
+                                <td>Conta de Luz</td>
+                                <td><span class="category-tag category-moradia">Moradia</span></td>
+                                <td>R$ 145,20</td>
+                            </tr>
+                            <tr>
+                                <td>Conta de Água</td>
+                                <td><span class="category-tag category-moradia">Moradia</span></td>
+                                <td>R$ 72,50</td>
+                            </tr>
+                            <tr>
+                                <td>Internet</td>
+                                <td><span class="category-tag category-moradia">Moradia</span></td>
+                                <td>R$ 99,90</td>
+                            </tr>
+                            <tr>
+                                <td>Pet Shop</td>
+                                <td><span class="category-tag category-pets">Pets</span></td>
+                                <td>R$ 135,00</td>
+                            </tr>
+                            <tr>
+                                <td>Restaurante</td>
+                                <td><span class="category-tag category-lazer">Lazer</span></td>
+                                <td>R$ 78,90</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- Despesas Crédito -->
+            <div class="table-card">
+
+                <div class="table-header">
+
+                    <h3 class="table-title">Despesas Crédito</h3>
+
+                    <div class="credit-badges">
+                            <span class="badge-date">Vence em 15/06</span>
+                            <span class="badge-status">Não pago</span>
+                    </div>
+
+                    <div class="table-meta">                        
+                        <p class="table-total-label mt-2">Total</p>
+                        <p class="table-total-value total-credit">R$ 1.172,19</p>
+                        <p class="table-hint">↓ Role para visualizar mais</p>
+                    </div>
+
+                </div>
+
+                <div class="table-scroll">
+                    <table class="expense-table">
+                        <thead>
+                            <tr>
+                                <th>Descrição</th>
+                                <th>Categoria</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Netflix</td>
+                                <td><span class="category-tag category-assinatura">Assinatura</span></td>
+                                <td>R$ 39,90</td>
+                            </tr>
+                            <tr>
+                                <td>Spotify</td>
+                                <td><span class="category-tag category-assinatura">Assinatura</span></td>
+                                <td>R$ 21,90</td>
+                            </tr>
+                            <tr>
+                                <td>Academia</td>
+                                <td><span class="category-tag category-academia">Academia</span></td>
+                                <td>R$ 119,90</td>
+                            </tr>
+                            <tr>
+                                <td>Amazon</td>
+                                <td><span class="category-tag category-compras">Compras</span></td>
+                                <td>R$ 189,90</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>iFood</td>
+                                <td><span class="category-tag category-alimentacao">Alimentação</span></td>
+                                <td>R$ 52,80</td>
+                            </tr>
+                            <tr>
+                                <td>Steam</td>
+                                <td><span class="category-tag category-entretenimento">Entretenimento</span></td>
+                                <td>R$ 79,99</td>
+                            </tr>
+                            <tr>
+                                <td>Uber</td>
+                                <td><span class="category-tag category-transporte">Transporte</span></td>
+                                <td>R$ 34,20</td>
+                            </tr>
+                            <tr>
+                                <td>Booking</td>
+                                <td><span class="category-tag category-viagem">Viagem</span></td>
+                                <td>R$ 420,00</td>
+                            </tr>
+                            <tr>
+                                <td>Shopee</td>
+                                <td><span class="category-tag category-compras">Compras</span></td>
+                                <td>R$ 89,50</td>
+                            </tr>
+                            <tr>
+                                <td>Mercado Livre</td>
+                                <td><span class="category-tag category-compras">Compras</span></td>
+                                <td>R$ 245,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

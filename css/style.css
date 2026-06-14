@@ -1,0 +1,618 @@
+/* COINK - Estilos Personalizados */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+/* Variáveis de cor */
+:root {
+  --navy:       #0f2d5e;
+  --navy-mid:   #1a3f7a;
+  --blue-soft:  #e8f0fc;
+  --green:      #16a34a;
+  --green-soft: #dcfce7;
+  --amber:      #d97706;
+  --amber-soft: #fef3c7;
+  --purple:     #7c3aed;
+  --purple-soft:#ede9fe;
+  --orange:     #ea580c;
+  --orange-soft:#fff7ed;
+  --text-main:  #1e293b;
+  --text-muted: #64748b;
+  --border:     #e2e8f0;
+  --bg:         #f1f5f9;
+}
+
+/* Reset e base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+/* Tipografia */
+h1, h2, h3, h4 {
+  font-family: 'Sora', sans-serif;
+}
+
+/* HEADER */
+
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.logo {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+
+.header-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-notif {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-notif:hover {
+  background: var(--blue-soft);
+} /*Quando o mouse passar sobre o botão de notificação, ele muda para um azul suave, indicando que é interativo.*/
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy-mid), var(--navy));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.user-name {
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+/* MAIN */
+
+.main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 24px 40px;
+}
+
+/* FILTROS */
+
+.filters-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  padding: 20px;
+  border: 1px solid var(--border);
+}
+
+/* Estiliza a classe months.row do html: 
+    flex: transforma em um container flexível, alinhados em linha por padrão
+    wrap: permite que os elementos quebrem para a próxima linha quando não couberem na linha atual 
+    center: alinha os elementos no centro 
+    8px: espaçamento entre os elementos 
+    16px: espaçamento abaixo da linha */
+.months-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.btn-year {
+  padding: 5px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.2s;
+}
+
+.btn-year:hover {
+  background: var(--blue-soft);
+} /*Quando o mouse passar sobre o botão de ano, ele muda para um azul suave, indicando que é interativo.*/
+
+.btn-month {
+  padding: 5px 12px;
+  background: var(--blue-soft);
+  border: none;
+  border-radius: 8px;
+  color: var(--navy-mid);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-month:hover {
+  background: #c7d9f8;
+} /*Quando o mouse passar sobre os botões de mês, eles mudam para um azul mais claro, indicando que são interativos.*/
+
+.btn-month.active {
+  background: var(--navy);
+  color: white;
+  font-weight: 600;
+} /*O botão de mês ativo tem um fundo azul escuro e texto branco, destacando-se dos outros meses.*/
+
+.actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end; /* Alinha os botões à direita */
+  gap: 10px;
+}
+
+.btn-view {
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-view.active {
+  background: var(--navy); /* Cor de fundo azul escuro para o estado ativo */
+  color: white;
+}
+
+.btn-view.inactive {
+  background: white;
+  color: var(--text-muted); /* Visual apagado para o estado inativo (Cor de texto cinza) */
+  border: 1px solid var(--border);
+}
+
+.btn-view.inactive:hover {
+  background: var(--blue-soft);
+  color: var(--navy);
+} /*Quando o mouse passar sobre o botão inativo, ele muda para um azul suave e o texto fica azul escuro, indicando que é interativo.*/
+
+.btn-add {
+  padding: 9px 18px;
+  background: var(--green); /* Cor de fundo verde para o botão "Adicionar" */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+} 
+
+.btn-add:hover {
+  background: #15803d;
+} /*Quando o mouse passar sobre o botão "Adicionar", ele muda para um verde mais escuro, indicando que é interativo.*/
+
+/* CARDS DE RESUMO */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+} /*A classe cards-grid define um layout de grade para os cards de resumo, começando com uma coluna única e um espaçamento de 16px entre os cards. O margin-top de 20px adiciona um espaço acima da grade para separar visualmente dos elementos anteriores.*/
+
+.summary-card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+} /*A classe summary-card estiliza cada card de resumo: fundo branco, bordas arredondadas, preenchimento interno, uma sombra sutil e uma borda clara. A posição relativa e o overflow hidden permitem que elementos posicionados absolutamente dentro do card (como ícones ou barras laterais) sejam exibidos corretamente. A transição suave para transformações e sombras melhora a interatividade visual quando o usuário interage com o card.*/
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+} /*Quando o mouse passar sobre o card de resumo, ele se eleva ligeiramente e a sombra fica mais pronunciada */
+
+.summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 16px 0 0 16px;
+} /* Barra lateral colorida usando o pseudo-elemento ::before */
+
+.card-saldo::before   { background: var(--green); }
+.card-renda::before   { background: #2563eb; }
+.card-despesas::before { background: var(--amber); }
+.card-poupado::before { background: var(--purple); } 
+/* Cores específicas para cada tipo de card, aplicadas na barra lateral usando o pseudo-elemento ::before */
+
+.card-saldo {
+  background: var(--green-soft);
+  border-color: #bbf7d0;
+} /* O card de saldo tem um fundo verde suave e uma borda verde clara, destacando-se dos outros cards. */
+
+.card-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+} /*A classe card-label estiliza o texto do rótulo em cada card, tornando-o pequeno, em maiúsculas, com espaçamento entre letras e uma cor cinza suave para indicar que é um rótulo. */
+
+.card-saldo .card-label { color: #166534; } /* O rótulo do card de saldo tem uma cor verde mais escura, reforçando a associação com o tema de saldo. */
+
+.card-value {
+  font-family: 'Sora', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+} /*A classe card-value estiliza o valor principal em cada card, usando uma fonte grande, pesada e com espaçamento negativo entre letras para criar um impacto visual forte. */
+
+.card-saldo   .card-value { color: var(--green); }
+.card-renda   .card-value { color: #2563eb; }
+.card-despesas .card-value { color: var(--amber); }
+.card-poupado .card-value { color: var(--purple); } 
+/* Cores específicas para os valores em cada tipo de card, reforçando a associação visual com o tema de cada card. */
+
+.card-icon {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 1.4rem;
+  opacity: 0.35;
+} /*A classe card-icon posiciona um ícone decorativo no canto superior direito de cada card, com uma opacidade reduzida para que não distraia do conteúdo principal, mas ainda adicione um elemento visual interessante. */
+
+/* TABELAS */
+
+.tables-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.table-card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  border: 1px solid var(--border);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.table-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.table-meta {
+  text-align: right;
+  flex-shrink: 0;
+} /*A classe table-meta alinha o texto à direita e impede que encolha, garantindo que as informações adicionais fiquem organizadas e legíveis, mesmo em telas menores.*/
+
+.table-total-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+} /*A classe table-total-label estiliza o rótulo do "TOTAL" na tabela: pequeno, maiúsculas, com espaçamento entre letras e uma cor cinza suave.*/
+
+.table-total-value {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #204dad;
+} /*A classe table-total-value estiliza o valor total na tabela (R$), usando uma fonte grande e pesada para destacá-lo, com uma cor azul escura */
+
+.table-hint {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+} /*A classe table-hint estiliza as informações adicionais abaixo do total, tornando-as pequenas e com uma cor cinza suave para indicar que são secundárias */
+
+.credit-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.badge-status {
+  padding: 3px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 999px;
+  background: var(--orange-soft);
+  color: var(--orange);
+  border: 1px solid #fed7aa;
+} /*A classe badge-status estiliza as etiquetas de status, tornando-as pequenas, arredondadas e com um fundo laranja suave para destacar o status de cada despesa.*/
+
+.table-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+} /*A classe table-scroll adiciona uma barra de rolagem vertical à tabela quando o conteúdo excede a altura máxima de 300px. A propriedade scrollbar-width: thin torna a barra de rolagem mais fina, e scrollbar-color define a cor da barra de rolagem (var(--border)) e a cor do plano de fundo da barra (transparent).*/
+
+.table-scroll::-webkit-scrollbar {
+  width: 4px;
+} /*Estiliza a barra de rolagem para navegadores baseados em WebKit (como Chrome e Safari), definindo a largura da barra de rolagem para 4px, tornando-a mais discreta.*/
+
+.table-scroll::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 99px;
+} /*Estiliza o polegar da barra de rolagem para navegadores baseados em WebKit, definindo a cor de fundo para var(--border) e arredondando os cantos para criar uma aparência mais suave e moderna.*/
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+} /* Define a largura total da tabela, unifica as bordas e ajusta o tamanho padrão do texto. */
+
+.expense-table thead tr {
+  border-bottom: 2px solid var(--border);
+} /* Adiciona uma borda inferior para destacar o cabeçalho da tabela. */
+
+.expense-table th {
+  padding: 8px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  text-align: left;
+} /* Estiliza os títulos das colunas com texto em maiúsculas, espaçamento e cor discreta. */
+
+.expense-table th:last-child {
+  text-align: right;
+} /* Alinha à direita o último título da tabela. */
+
+.expense-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+} /* Adiciona separação entre as linhas e suaviza o efeito de destaque ao passar o mouse. */
+
+.expense-table tbody tr:last-child {
+  border-bottom: none;
+} /* Remove a borda inferior da última linha da tabela. */
+
+.expense-table tbody tr:hover {
+  background: var(--bg);
+} /* Destaca a linha ao passar o mouse para facilitar a leitura. */
+
+.expense-table td {
+  padding: 11px 10px;
+  color: var(--text-main);
+} /* Define o espaçamento interno e a cor padrão dos dados da tabela. */
+
+.expense-table td:last-child {
+  text-align: right;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+} /* Destaca os valores das despesas, alinhando-os à direita e evitando quebra de linha. */
+
+.category-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+} /*A classe category-tag estiliza as tags de categoria nas tabelas, tornando-as pequenas, arredondadas e com um fundo azul suave para destacar a categoria de cada despesa.*/
+
+/*Definição de cores de fundo e texto distintas para cada tipo de despesa, facilitando a identificação visual rápida das categorias nas tabelas.*/
+.category-saude {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.category-alimentacao {
+  background: var(--blue-soft);
+  color: var(--navy-mid);
+}
+
+.category-academia {
+  background: #dcfce7; /* verde claro */
+  color: #166534;      /* verde escuro */
+}
+
+.category-transporte {
+  background: #fef3c7; /* amarelo claro */
+  color: #b45309;      /* âmbar escuro */
+}
+
+.category-moradia {
+  background: #ede9fe; /* roxo claro */
+  color: #6d28d9;      /* roxo */
+}
+
+.category-pets {
+  background: #ffedd5; /* laranja claro */
+  color: #c2410c;      /* laranja escuro */
+}
+
+.category-compras {
+  background: #fce7f3; /* rosa claro */
+  color: #be185d;      /* rosa escuro */
+}
+
+.category-entretenimento {
+  background: #e0e7ff; /* índigo claro */
+  color: #4338ca;      /* índigo */
+}
+
+.category-viagem {
+  background: #ccfbf1; /* turquesa claro */
+  color: #0f766e;      /* turquesa escuro */
+}
+
+.category-assinatura {
+  background: #e2e8f0; /* cinza claro */
+  color: #475569; /* cinza azulado */
+}
+
+.category-lazer {
+  background: #ffe4e6; /* rosa claro */
+  color: #be123c;      /* rosa escuro */
+}
+
+/* RESPONSIVIDADE */
+
+/*A seção de responsividade utiliza media queries para ajustar o layout e a visibilidade de certos elementos com base na largura da tela. Isso garante que a interface seja otimizada para diferentes dispositivos, desde smartphones até desktops. Por exemplo, em telas menores, o título do header e o nome do usuário são ocultados para economizar espaço, enquanto em telas maiores, a grade de cards se expande para mostrar mais informações lado a lado. */
+
+@media (min-width: 640px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .tables-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header-title {
+    font-size: 1.25rem;
+  }
+
+  .card-value {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .header-title {
+    display: none;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .main-content {
+    padding-top: 90px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .filters-card {
+    padding: 16px;
+  }
+
+  .btn-month {
+    padding: 4px 9px;
+    font-size: 0.8rem;
+  }
+
+  .actions-row {
+    justify-content: flex-start;
+  }
+
+  .summary-card {
+    padding: 18px;
+  }
+
+  .card-value {
+    font-size: 1.75rem;
+  }
+
+  .table-card {
+    padding: 16px;
+  }
+
+  .expense-table th,
+  .expense-table td {
+    padding: 8px 6px;
+  }
+}
